@@ -11,7 +11,7 @@
             background-image: url('plano-de-fundo2.jpg'); /* Imagem de plano de fundo */
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center center;
+            background-position: center top; /* Ajustado para que a imagem fique no topo */
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -22,11 +22,8 @@
         .logo-image {
             max-width: 300px;
             z-index: 1;
-            position: relative;
-            top: -50px;
         }
         h1 {
-            margin-top: 40px;
             font-size: 24px;
             color: #000;
             background-color: #000; /* Fundo preto para a frase */
@@ -38,7 +35,7 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 20px; /* Aumentei a margem superior para separar os botões da frase */
         }
         .button-column {
             display: flex;
@@ -62,25 +59,11 @@
             body {
                 background-image: url('plano-de-fundo2-mobile.jpg'); /* Imagem de plano de fundo para dispositivos móveis */
             }
-            .logo-image {
-                top: -30px;
-            }
-            h1 {
-                top: 0;
-            }
-            .button-container {
-                top: 20px;
-            }
-            button {
-                width: 150px;
-                height: 40px;
-            }
         }
     </style>
 </head>
 <body>
-    <img class="full-screen-image" src="fundoo.png" alt="Imagem de Fundo">
-    
+    <img class="logo-image" src="inovalejr.png" alt="Logo Inovale">
     <h1>Financeiro Inovale Jr.</h1>
     <div class="button-container">
         <div class="button-column">
