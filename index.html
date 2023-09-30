@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Página de Autenticação</title>
     <style>
         body {
@@ -30,20 +31,40 @@
         h1 {
             margin-top: 20px;
             font-size: 24px; /* Aumenta o tamanho do texto */
+            color: #000; /* Cor do texto (preto) */
         }
         .button-container {
             display: flex;
             flex-direction: row;
+            justify-content: center;
         }
         .button-column {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 10px; /* Espaçamento entre colunas de botões */
         }
         button {
-            margin: 10px;
+            margin: 5px; /* Espaçamento entre botões */
             padding: 10px 20px;
             font-size: 18px;
+            background-color: #000; /* Cor de fundo preta para botões */
+            color: #fff; /* Cor do texto dos botões (branco) */
+            border: none; /* Remover bordas dos botões */
+            cursor: pointer;
+        }
+
+        /* Estilo para telas menores */
+        @media (max-width: 768px) {
+            .logo-image {
+                max-width: 200px; /* Reduz o tamanho da logo em telas menores */
+            }
+            h1 {
+                font-size: 20px; /* Reduz o tamanho do texto em telas menores */
+            }
+            .button-container {
+                flex-direction: column; /* Coloca os botões um abaixo do outro em telas menores */
+            }
         }
     </style>
 </head>
@@ -51,7 +72,7 @@
     <img class="full-screen-image" src="fundo.jpg" alt="Imagem de Fundo">
     <img class="logo-image" src="inovalejr.png" alt="Logo Inovale">
     
-    <h1>Financeiro Inovale Jr.</h1> <!-- Altera o texto -->
+    <h1>Financeiro Inovale Jr.</h1>
     <div class="button-container">
         <div class="button-column">
             <button onclick="acaoBotao1()">Botão 1</button>
