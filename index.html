@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Página de Autenticação</title>
     <style>
         body {
@@ -13,7 +14,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh; /* Centraliza o conteúdo verticalmente na tela */
+            height: 100vh;
         }
         .full-screen-image {
             position: absolute;
@@ -24,44 +25,64 @@
             z-index: -1; /* Coloca a imagem no plano de fundo */
         }
         .logo-image {
-            max-width: 300px; /* Aumenta o tamanho da logo */
+            position: absolute;
+            top: 40%; /* Ajuste a porcentagem para posicionar a logo verticalmente */
+            left: 50%; /* Centralize a logo horizontalmente */
+            transform: translate(-50%, -50%); /* Centralize a logo com base no seu tamanho */
+            max-width: 300px;
             z-index: 1; /* Coloca a logo na frente do conteúdo */
         }
         h1 {
             margin-top: 20px;
-            font-size: 24px; /* Aumenta o tamanho do texto */
+            font-size: 24px;
+            color: #000;
         }
         .button-container {
             display: flex;
             flex-direction: row;
+            justify-content: center;
         }
         .button-column {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 10px;
         }
         button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 18px;
+            margin: 5px;
+            padding: 30px 60px; /* Aumente o tamanho dos botões */
+            font-size: 54px; /* Aumente o tamanho da fonte dos botões */
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Imagem de plano de fundo para dispositivos móveis */
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0; /* Cor de fundo personalizada */
+            }
+            .full-screen-image {
+                display: none; /* Oculta a imagem de fundo em dispositivos móveis */
+            }
         }
     </style>
 </head>
 <body>
     <img class="full-screen-image" src="fundo2.png" alt="Imagem de Fundo">
-    <img class="logo-image" src="inovalejr.png" alt="Logo Inovale">
     
-    <h1>Financeiro Inovale Jr.</h1> <!-- Altera o texto -->
+    <h1>Financeiro Inovale Jr.</h1>
     <div class="button-container">
         <div class="button-column">
-            <button onclick="acaoBotao1()">Botão 1</button>
-            <button onclick="acaoBotao2()">Botão 2</button>
-            <button onclick="acaoBotao3()">Botão 3</button>
+            <button onclick="planilhaInovale()">Planilha Inovale</button>
+            <button onclick="canvaAdmFinanceiro()">Canva: Adm/Financeiro</button>
+            <button onclick="recibos()">Recibos</button>
         </div>
         <div class="button-column">
-            <button onclick="acaoBotao4()">Botão 4</button>
-            <button onclick="acaoBotao5()">Botão 5</button>
-            <button onclick="acaoBotao6()">Botão 6</button>
+            <button onclick="pipefy()">Pipefy</button>
+            <button onclick="documentosDrive()">Documentos Drive</button>
+            <button onclick="documentosGerais()">Documentos Gerais</button>
         </div>
     </div>
     
