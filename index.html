@@ -9,10 +9,11 @@
             margin: 0;
             padding: 0;
             text-align: center;
-        }
-        .full-screen-image {
-            position: relative;
-            width: 100%;
+            background-image: url('plano-de-fundo-grande.jpg'); /* Imagem de plano de fundo para telas grandes */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
         }
         .button-container {
             position: absolute;
@@ -39,28 +40,22 @@
 
         /* Imagem de plano de fundo para dispositivos móveis */
         @media (max-width: 768px) {
-            .full-screen-image {
+            body {
                 background-image: url('plano-de-fundo-pequeno.jpg'); /* Imagem de plano de fundo para dispositivos móveis */
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-                height: 100vh;
             }
         }
     </style>
 </head>
 <body>
-    <div class="full-screen-image">
-        <img class="logo-image" src="inovalejr.png" alt="Logo Inovale">
-        <div class="button-container">
-            <button onclick="acaoBotao1()">Botão 1</button>
-            <button onclick="acaoBotao2()">Botão 2</button>
-            <button onclick="acaoBotao3()">Botão 3</button>
-            <button onclick="acaoBotao4()">Botão 4</button>
-            <button onclick="acaoBotao5()">Botão 5</button>
-            <button onclick="acaoBotao6()">Botão 6</button>
-        </div>
+    <div class="button-container">
+        <button onclick="acaoBotao1()">Botão 1</button>
+        <button onclick="acaoBotao2()">Botão 2</button>
+        <button onclick="acaoBotao3()">Botão 3</button>
+        <button onclick="acaoBotao4()">Botão 4</button>
+        <button onclick="acaoBotao5()">Botão 5</button>
+        <button onclick="acaoBotao6()">Botão 6</button>
     </div>
+    <img class="logo-image" src="inovalejr.png" alt="Logo Inovale">
     
     <!-- Vincule o arquivo JavaScript externo -->
     <script src="inovalejr.js"></script>
