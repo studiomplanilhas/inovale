@@ -14,7 +14,7 @@
     <img class="logo-image" src="in.png" alt="Logo Inovale">
     <h1>Financeiro Inovale Jr.</h1>
     <div class="button-container">
-        <button id="entrarButton" onclick="mostrarBotoes()">Entrar</button>
+        <button id="entrarButton">Entrar</button>
     </div>
     <div class="button-container" id="botoesAposEntrar" style="display: none;">
         <div class="button-column">
@@ -28,17 +28,7 @@
             <button onclick="documentosGerais()">Documentos Gerais</button>
         </div>
     </div>
-
     <!-- Vincule o arquivo JavaScript externo -->
     <script src="inovalejr.js"></script>
-
-    <script>
-        function mostrarBotoes() {
-            // Oculta o botão "Entrar"
-            document.getElementById("entrarButton").style.display = "none";
-            // Mostra os outros botões
-            document.getElementById("botoesAposEntrar").style.display = "flex";
-        }
-    </script>
 </body>
 </html>
