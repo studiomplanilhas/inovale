@@ -27,10 +27,3 @@ function documentosDrive() {
 function documentosGerais() {
     window.location.href = "https://drive.google.com/drive/u/1/folders/1nX11M6KOu8jxC27n6cFci7DmtTCbZn3R";
 }
-
-document.getElementById("entrarButton").addEventListener("click", function() {
-    // Oculta o botão "Entrar"
-    document.getElementById("entrarButton").style.display = "none";
-    // Mostra os outros botões
-    document.getElementById("botoesAposEntrar").style.display = "flex";
-});
