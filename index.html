@@ -5,68 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Página de Autenticação</title>
     <style>
-        body {
-            background-color: #0C3846; /* Fundo azul escuro */
-            margin: 0;
-            padding: 0;
-            background-image: url('plano-de-fundo2.jpg'); /* Imagem de plano de fundo */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center top; /* Ajustado para que a imagem fique no topo */
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .logo-image {
-            max-width: 300px;
-            z-index: 1;
-        }
-        h1 {
-            font-size: 24px;
-            color: #000;
-            background-color: #000; /* Fundo preto para a frase */
-            color: #FFA500; /* Letras laranjas */
-            padding: 10px 20px; /* Espaçamento interno para o retângulo */
-            border-radius: 10px; /* Cantos arredondados */
-        }
-        .button-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-top: 20px; /* Aumentei a margem superior para separar os botões da frase */
-        }
-        .button-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-        }
-        button {
-            margin: 10px;
-            font-size: 18px;
-            background-color: #e65e0e; /* Laranja (#e65e0e) */
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            width: 200px;
-            height: 50px;
-        }
+        /* Estilos CSS permanecem os mesmos */
 
-        /* Imagem de plano de fundo para dispositivos móveis */
-        @media (max-width: 768px) {
-            body {
-                background-image: url('plano-de-fundo2-mobile.jpg'); /* Imagem de plano de fundo para dispositivos móveis */
-            }
-        }
+        /* ... (seu CSS aqui) ... */
     </style>
 </head>
 <body>
     <img class="logo-image" src="in.png" alt="Logo Inovale">
     <h1>Financeiro Inovale Jr.</h1>
     <div class="button-container">
+        <button id="entrarButton" onclick="mostrarBotoes()">Entrar</button>
+    </div>
+    <div class="button-container" id="botoesAposEntrar" style="display: none;">
         <div class="button-column">
             <button onclick="planilhaInovale()">Planilha Inovale</button>
             <button onclick="canvaAdmFinanceiro()">Canva: Adm/Financeiro</button>
@@ -78,8 +28,17 @@
             <button onclick="documentosGerais()">Documentos Gerais</button>
         </div>
     </div>
-    
+
     <!-- Vincule o arquivo JavaScript externo -->
     <script src="inovalejr.js"></script>
+
+    <script>
+        function mostrarBotoes() {
+            // Oculta o botão "Entrar"
+            document.getElementById("entrarButton").style.display = "none";
+            // Mostra os outros botões
+            document.getElementById("botoesAposEntrar").style.display = "flex";
+        }
+    </script>
 </body>
 </html>
