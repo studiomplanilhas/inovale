@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Autenticação</title>
     <style>
         body {
-            background-color: #0C3846; /* Fundo azul escuro */
+            background-color: #0C3846;
             margin: 0;
             padding: 0;
-            background-image: url('plano-de-fundo2.jpg'); /* Imagem de plano de fundo */
+            background-image: url('plano-de-fundo2.jpg');
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center top; /* Ajustado para que a imagem fique no topo */
+            background-position: center top;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -20,45 +20,42 @@
             justify-content: center;
             height: 100vh;
         }
+
         .logo-image {
             max-width: 300px;
             z-index: 1;
         }
+
         h1 {
             font-size: 24px;
             color: #000;
-            background-color: #000; /* Fundo preto para a frase */
-            color: #FFA500; /* Letras laranjas */
-            padding: 10px 20px; /* Espaçamento interno para o retângulo */
-            border-radius: 10px; /* Cantos arredondados */
+            background-color: #000;
+            color: #FFA500;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
-        .button-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-top: 20px; /* Aumentei a margem superior para separar os botões da frase */
+
+        .calendar-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
         }
-        .button-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-        }
+
         button {
-            margin: 10px;
             font-size: 18px;
-            background-color: #e65e0e; /* Laranja (#e65e0e) */
+            background-color: #e65e0e;
             color: #fff;
             border: none;
             cursor: pointer;
-            width: 200px;
+            width: 100%;
             height: 50px;
         }
 
-        /* Imagem de plano de fundo para dispositivos móveis */
         @media (max-width: 768px) {
             body {
-                background-image: url('plano-de-fundo2-mobile.jpg'); /* Imagem de plano de fundo para dispositivos móveis */
+                background-image: url('plano-de-fundo2-mobile.jpg');
             }
         }
     </style>
@@ -66,20 +63,27 @@
 <body>
     <img class="logo-image" src="in.png" alt="Logo Inovale">
     <h1>Financeiro Inovale Jr.</h1>
-    <div class="button-container">
-        <div class="button-column">
-            <button onclick="planilhaInovale()">Planilha Inovale</button>
-            <button onclick="canvaAdmFinanceiro()">Canva: Adm/Financeiro</button>
-            <button onclick="recibos()">Recibos</button>
-        </div>
-        <div class="button-column">
-            <button onclick="pipefy()">Pipefy</button>
-            <button onclick="documentosDrive()">Documentos Drive</button>
-            <button onclick="documentosGerais()">Documentos Gerais</button>
-        </div>
-    </div>
-    
-    <!-- Vincule o arquivo JavaScript externo -->
-    <script src="inovalejr.js"></script>
+    <div class="calendar-container" id="calendarContainer"></div>
+    <script>
+        function criarBotoes() {
+            const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            const container = document.getElementById('calendarContainer');
+
+            meses.forEach((mes) => {
+                const button = document.createElement('button');
+                button.textContent = mes;
+                button.onclick = function () {
+                    redirecionar('https://link-' + mes.toLowerCase());
+                };
+                container.appendChild(button);
+            });
+        }
+
+        function redirecionar(link) {
+            window.location.href = link;
+        }
+
+        window.onload = criarBotoes;
+    </script>
 </body>
 </html>
