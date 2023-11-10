@@ -3,16 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Autenticação</title>
+    <title>Página de Relatórios</title>
+    <style>
+        body {
+            background-color: #0C3846;
+            margin: 0;
+            padding: 0;
+            background-image: url('plano-de-fundo2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .logo-image {
+            max-width: 300px;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #000;
+            background-color: #000;
+            color: #FFA500;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .calendar-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            background-color: #e65e0e;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+        }
+    </style>
 </head>
-<body style="background-color: #0C3846; margin: 0; padding: 0; background-image: url('plano-de-fundo2.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center top; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+<body>
+    <img class="logo-image" src="in.png" alt="Logo Inovale">
+    <h1>Relatórios Inovale Jr.</h1>
+    <div class="calendar-container" id="calendarContainer"></div>
+    <script>
+        function criarBotoes() {
+            const links = [
+                "https://docs.google.com/spreadsheets/d/1rUyPhy5Tew-jjBdxDn-WRBkAwYrluRsYv9WFog67PZ0/edit#gid=1556452013",
+                "https://www.canva.com/folder/FAFar1_ZD9Y",
+                "https://www.canva.com/design/DAFe-ctw3hc/cLHchc2l0AFD2pGExTesQA/edit",
+                "https://app.pipefy.com/organizations/164775",
+                "https://link5.exemplo",
+                "https://link6.exemplo",
+                "https://link7.exemplo",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://link9.exemplo",
+                "https://link10.exemplo",
+                "https://link11.exemplo",
+                "https://link12.exemplo"
+            ];
+            const container = document.getElementById('calendarContainer');
 
-    <img class="logo-image" src="in.png" alt="Logo Inovale" style="max-width: 300px; z-index: 1;">
+            links.forEach((link, index) => {
+                const button = document.createElement('button');
+                button.textContent = "Link " + (index + 1);
+                button.onclick = function () {
+                    redirecionar(link);
+                };
+                container.appendChild(button);
+            });
+        }
 
-    <h1 style="font-size: 24px; color: #000; background-color: #000; color: #FFA500; padding: 10px 20px; border-radius: 10px;">Financeiro Inovale Jr.</h1>
+        function redirecionar(link) {
+            window.location.href = link;
+        }
 
-    <div class="calendar-container" id="calendarContainer" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 10px; margin-top: 20px;"></div>
-
-    <script src="script.js"></script>
+        window.onload = criarBotoes;
+    </script>
 </body>
 </html>
