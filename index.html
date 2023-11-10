@@ -58,6 +58,26 @@
             width: 100px;
             height: 50px;
         }
+
+        .planilha-button {
+            font-size: 18px;
+            background-color: #e65e0e;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 150px;
+            height: 50px;
+        }
+
+        .link-button {
+            font-size: 18px;
+            background-color: #e65e0e;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -68,8 +88,9 @@
         <div class="button-group" id="buttonGroup1"></div>
         <h2>2024</h2>
         <div class="button-group" id="buttonGroup2"></div>
-        <button id="planilhaButton">Planilha Financeira</button>
+        <button class="planilha-button" id="planilhaButton">Planilha Financeira</button>
     </div>
+    <a href="https://www.example.com" class="link-button">- (clique aqui)</a>
     <script>
         function criarBotoes() {
             const meses2023 = ['Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
