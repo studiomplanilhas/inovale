@@ -58,39 +58,6 @@
     <img class="logo-image" src="in.png" alt="Logo Inovale">
     <h1>Relatórios Inovale Jr.</h1>
     <div class="calendar-container" id="calendarContainer"></div>
-    <script>
-        function criarBotoes() {
-            const links = [
-                "https://docs.google.com/spreadsheets/d/1rUyPhy5Tew-jjBdxDn-WRBkAwYrluRsYv9WFog67PZ0/edit#gid=1556452013",
-                "https://www.canva.com/folder/FAFar1_ZD9Y",
-                "https://www.canva.com/design/DAFe-ctw3hc/cLHchc2l0AFD2pGExTesQA/edit",
-                "https://app.pipefy.com/organizations/164775",
-                "https://link5.exemplo",
-                "https://link6.exemplo",
-                "https://link7.exemplo",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://link9.exemplo",
-                "https://link10.exemplo",
-                "https://link11.exemplo",
-                "https://link12.exemplo"
-            ];
-            const container = document.getElementById('calendarContainer');
-
-            links.forEach((link, index) => {
-                const button = document.createElement('button');
-                button.textContent = "Link " + (index + 1);
-                button.onclick = function () {
-                    redirecionar(link);
-                };
-                container.appendChild(button);
-            });
-        }
-
-        function redirecionar(link) {
-            window.location.href = link;
-        }
-
-        window.onload = criarBotoes;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
