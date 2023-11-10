@@ -67,7 +67,8 @@
         <h2>2023</h2>
         <div class="button-group" id="buttonGroup1"></div>
         <h2>2024</h2>
-        <div class="button-group" id="buttonGroup2"></div>
+        <div class="button-group" id "buttonGroup2"></div>
+        <button id="planilhaButton">Planilha Financeiro</button>
     </div>
     <script>
         function criarBotoes() {
@@ -109,6 +110,11 @@
                 };
                 container2024.appendChild(button);
             });
+
+            const planilhaButton = document.getElementById('planilhaButton');
+            planilhaButton.onclick = function () {
+                redirecionar("https://link-planilha-financeiro.exemplo");
+            };
         }
 
         function redirecionar(link) {
