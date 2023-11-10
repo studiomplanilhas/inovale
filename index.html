@@ -36,11 +36,17 @@
         }
 
         .calendar-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 1fr);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             gap: 10px;
             margin-top: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
         }
 
         button {
@@ -49,7 +55,7 @@
             color: #fff;
             border: none;
             cursor: pointer;
-            width: 100%;
+            width: 100px;
             height: 50px;
         }
     </style>
@@ -57,34 +63,51 @@
 <body>
     <img class="logo-image" src="in.png" alt="Logo Inovale">
     <h1>Relatórios Inovale Jr.</h1>
-    <div class="calendar-container" id="calendarContainer"></div>
+    <div class="calendar-container" id="calendarContainer">
+        <h2>2023</h2>
+        <div class="button-group" id="buttonGroup1"></div>
+        <h2>2024</h2>
+        <div class="button-group" id="buttonGroup2"></div>
+    </div>
     <script>
         function criarBotoes() {
-            const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-            const container = document.getElementById('calendarContainer');
+            const meses2023 = ['Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            const container2023 = document.getElementById('buttonGroup1');
 
-            const links = [
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edita",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
-                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit"
+            const links2023 = [
+                "https://link-agosto-2023.exemplo",
+                "https://link-setembro-2023.exemplo",
+                "https://link-outubro-2023.exemplo",
+                "https://link-novembro-2023.exemplo",
+                "https://link-dezembro-2023.exemplo"
             ];
 
-            meses.forEach((mes, index) => {
+            meses2023.forEach((mes, index) => {
                 const button = document.createElement('button');
                 button.textContent = mes;
                 button.onclick = function () {
-                    redirecionar(links[index]);
+                    redirecionar(links2023[index]);
                 };
-                container.appendChild(button);
+                container2023.appendChild(button);
+            });
+
+            const meses2024 = ['Janeiro', 'Fevereiro', 'Março', 'Abril'];
+            const container2024 = document.getElementById('buttonGroup2');
+
+            const links2024 = [
+                "https://link-janeiro-2024.exemplo",
+                "https://link-fevereiro-2024.exemplo",
+                "https://link-marco-2024.exemplo",
+                "https://link-abril-2024.exemplo"
+            ];
+
+            meses2024.forEach((mes, index) => {
+                const button = document.createElement('button');
+                button.textContent = mes;
+                button.onclick = function () {
+                    redirecionar(links2024[index]);
+                };
+                container2024.appendChild(button);
             });
         }
 
