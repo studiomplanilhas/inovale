@@ -67,7 +67,7 @@
             cursor: pointer;
             width: 200px;
             height: 50px;
-            margin-top: 20px; /* Espaçamento superior */
+            margin-top: 20px; /* Adicionado espaçamento superior */
         }
     </style>
 </head>
@@ -75,7 +75,9 @@
     <img class="logo-image" src="in.png" alt="Logo Inovale">
     <h1>Relatórios Inovale Jr.</h1>
     <div class="calendar-container" id="calendarContainer">
+        <h2>2023</h2>
         <div class="button-group" id="buttonGroup1"></div>
+        <h2>2024</h2>
         <div class="button-group" id="buttonGroup2"></div>
     </div>
     <div class="planilha-financeira-button" id="planilhaFinanceiraButton">Planilha Financeira</div>
@@ -84,7 +86,6 @@
             const meses2023 = ['Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
             const container2023 = document.getElementById('buttonGroup1');
 
-            // Links para os meses de 2023
             const links2023 = [
                 "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
                 "https://www.canva.com/design/DAFwG9e9ja0/0tZ-63WPKkbuApCGNLIlhQ/edit",
@@ -93,7 +94,6 @@
                 "https://www.canva.com/design/DAFzuR6Kzxk/usN94zay5quv3_kpi-AdAA/edit?utm_content=DAFzuR6Kzxk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
             ];
 
-            // Cria os botões para 2023
             meses2023.forEach((mes, index) => {
                 const button = document.createElement('button');
                 button.textContent = mes;
@@ -106,7 +106,6 @@
             const meses2024 = ['Janeiro', 'Fevereiro', 'Março', 'Abril'];
             const container2024 = document.getElementById('buttonGroup2');
 
-            // Links para os meses de 2024
             const links2024 = [
                 "https://www.canva.com/design/DAFzuaE--xs/tUzJfQ_E2tfOoBn4YqbyZw/edit?utm_content=DAFzuaE--xs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
                 "https://link-fevereiro-2024.exemplo",
@@ -114,7 +113,6 @@
                 "https://link-abril-2024.exemplo"
             ];
 
-            // Cria os botões para 2024
             meses2024.forEach((mes, index) => {
                 const button = document.createElement('button');
                 button.textContent = mes;
@@ -123,6 +121,11 @@
                 };
                 container2024.appendChild(button);
             });
+
+            const planilhaFinanceiraButton = document.getElementById('planilhaFinanceiraButton');
+            planilhaFinanceiraButton.onclick = function () {
+                redirecionar("https://docs.google.com/spreadsheets/d/1rUyPhy5Tew-jjBdxDn-WRBkAwYrluRsYv9WFog67PZ0/edit#gid=1556452013");
+            };
         }
 
         function redirecionar(link) {
