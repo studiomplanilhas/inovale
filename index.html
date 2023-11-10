@@ -59,6 +59,11 @@
             height: 50px;
         }
 
+        .planilha-text {
+            font-size: 18px;
+            color: #FFA500;
+        }
+
         .planilha-button {
             font-size: 18px;
             background-color: #e65e0e;
@@ -79,8 +84,8 @@
         <h2>2024</h2>
         <div class="button-group" id="buttonGroup2"></div>
     </div>
-    <div class="planilha-button" id="planilhaButton">Planilha Financeira</div>
-    <button id="cliqueAquiButton">Clique Aqui</button>
+    <div class="planilha-text">Planilha Financeira</div>
+    <div class="planilha-button" id="planilhaButton">Clique Aqui</div>
     <script>
         function criarBotoes() {
             const meses2023 = ['Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
@@ -126,11 +131,6 @@
             planilhaButton.onclick = function () {
                 redirecionar("https://docs.google.com/spreadsheets/d/1rUyPhy5Tew-jjBdxDn-WRBkAwYrluRsYv9WFog67PZ0/edit#gid=1556452013");
             };
-
-            const cliqueAquiButton = document.getElementById('cliqueAquiButton');
-            cliqueAquiButton.onclick = function () {
-                redirecionar("https://docs.google.com/spreadsheets/d/1rUyPhy5Tew-jjBdxDn-WRBkAwYrluRsYv9WFog67PZ0/edit#gid=1556452013");
-            };
         }
 
         function redirecionar(link) {
@@ -141,3 +141,4 @@
     </script>
 </body>
 </html>
+
