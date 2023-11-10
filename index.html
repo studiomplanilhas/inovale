@@ -58,6 +58,41 @@
     <img class="logo-image" src="in.png" alt="Logo Inovale">
     <h1>Relatórios Inovale Jr.</h1>
     <div class="calendar-container" id="calendarContainer"></div>
-    <script src="script.js"></script>
+    <script>
+        function criarBotoes() {
+            const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            const container = document.getElementById('calendarContainer');
+
+            const links = [
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edita",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit",
+                "https://www.canva.com/design/DAFr6jmAg4A/EM4HKNR-JbFzfNRdwb19yQ/edit"
+            ];
+
+            meses.forEach((mes, index) => {
+                const button = document.createElement('button');
+                button.textContent = mes;
+                button.onclick = function () {
+                    redirecionar(links[index]);
+                };
+                container.appendChild(button);
+            });
+        }
+
+        function redirecionar(link) {
+            window.location.href = link;
+        }
+
+        window.onload = criarBotoes;
+    </script>
 </body>
 </html>
