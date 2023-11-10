@@ -59,19 +59,13 @@
             height: 50px;
         }
 
-        .planilha-text {
-            font-size: 18px;
-            color: #FFA500;
-            margin-top: 20px;
-        }
-
-        .planilha-button {
+        .planilha-financeira-button {
             font-size: 18px;
             background-color: #e65e0e;
             color: #fff;
             border: none;
             cursor: pointer;
-            width: 150px;
+            width: 200px;
             height: 50px;
         }
     </style>
@@ -85,8 +79,7 @@
         <h2>2024</h2>
         <div class="button-group" id="buttonGroup2"></div>
     </div>
-    <div class="planilha-text">Planilha Financeira</div>
-    <div class="planilha-button" id="planilhaButton">Clique Aqui</div>
+    <div class="planilha-financeira-button" id="planilhaFinanceiraButton">Planilha Financeira</div>
     <script>
         function criarBotoes() {
             const meses2023 = ['Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
@@ -128,8 +121,8 @@
                 container2024.appendChild(button);
             });
 
-            const planilhaButton = document.getElementById('planilhaButton');
-            planilhaButton.onclick = function () {
+            const planilhaFinanceiraButton = document.getElementById('planilhaFinanceiraButton');
+            planilhaFinanceiraButton.onclick = function () {
                 redirecionar("https://docs.google.com/spreadsheets/d/1rUyPhy5Tew-jjBdxDn-WRBkAwYrluRsYv9WFog67PZ0/edit#gid=1556452013");
             };
         }
